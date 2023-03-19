@@ -21,6 +21,12 @@ with open("input.txt", "r") as file:
                 encoded.append(int(x))
             
         print(f"#####{i+1}#####")
+
+        for x in encoded:
+
+            print(x, end="")
+
+        print("\n")
         draw(encoded)
     
         i += 1

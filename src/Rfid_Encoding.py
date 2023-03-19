@@ -5,37 +5,52 @@ def draw(encoded):
     ONE = "━"
     LOW = "┓" 
     HIGE = "┏"
+    SEPARE = "|"
 
     decoded = [[], [], [], []]
 
     if encoded[0] == 0:
 
+        decoded[0].append(SEPARE)
         decoded[0].append(ZERO)
         decoded[0].append(ZERO)
+        decoded[0].append(SEPARE)
 
+        decoded[1].append(SEPARE)
         decoded[1].append(ZERO)
+        decoded[1].append(ZERO)
+        decoded[1].append(SEPARE)
 
+        decoded[2].append(SEPARE)
         decoded[2].append(ZERO)
-        decoded[2].append(HIGE)
         decoded[2].append(ONE)
+        decoded[2].append(SEPARE)
 
-        decoded[3].append(HIGE)
-        #decoded[3].append(ONE)
+        decoded[3].append(SEPARE)
+        decoded[3].append(ONE)
+        decoded[3].append(SEPARE)
 
     else:
         
+        decoded[0].append(SEPARE)
         decoded[0].append(ONE)
-        decoded[0].append(LOW)
         decoded[0].append(ZERO)
+        decoded[0].append(SEPARE)
 
+        decoded[1].append(SEPARE)
         decoded[1].append(ONE)
+        decoded[1].append(ONE)
+        decoded[1].append(SEPARE)
 
+        decoded[2].append(SEPARE)
         decoded[2].append(ONE)
-        decoded[2].append(LOW)
         decoded[2].append(ZERO)
+        decoded[2].append(SEPARE)
 
-        decoded[3].append(LOW)
-        #decoded[3].append(ZERO)
+        decoded[3].append(SEPARE)
+        decoded[3].append(ZERO)
+        decoded[3].append(ONE)
+        decoded[3].append(SEPARE)
 
     i = 1
 
@@ -45,69 +60,71 @@ def draw(encoded):
 
             decoded[0].append(ZERO)
             decoded[0].append(ZERO)
+            decoded[0].append(SEPARE)
 
-            if encoded[i-1] == 0:
-
-                decoded[1].append(ZERO)
+            decoded[1].append(ZERO)
+            decoded[1].append(ZERO)
+            decoded[1].append(SEPARE)
                 
-                decoded[2].append(LOW)
-                decoded[2].append(ZERO)
-                decoded[2].append(HIGE)
-                decoded[2].append(ONE)
-
-            else :
-
-                decoded[1].append(LOW)
-                decoded[1].append(ZERO)
+            decoded[2].append(ZERO)
+            decoded[2].append(ONE)
+            decoded[2].append(SEPARE)
                 
-                decoded[2].append(HIGE)
-                decoded[2].append(ONE)
-                
-            if decoded[3][i-1] == HIGE:
+            if decoded[3][i-2] == ONE:
+
+                if encoded[i-1] == 1:
+    
+                    decoded[3].append(ONE)
+                    decoded[3].append(ONE)
+                    decoded[3].append(SEPARE)
+
+                else:
+
+                    decoded[3].append(ZERO)
+                    decoded[3].append(ZERO)
+                    decoded[3].append(SEPARE)
                     
-                decoded[3].append(ONE)
-                decoded[3].append(LOW)
+            else:
+
+                if encoded[i-1] == 1:
                     
-            elif decoded[3][i-1] == LOW:
+                    decoded[3].append(ZERO)
+                    decoded[3].append(ZERO)
+                    decoded[3].append(SEPARE)
+
+                else:
                     
-                decoded[3].append(ZERO)
-                decoded[3].append(HIGE)
-            
+                    decoded[3].append(ONE)
+                    decoded[3].append(ONE)
+                    decoded[3].append(SEPARE)
                 
                 
         else:
             
-            decoded[0].append(HIGE)
-            decoded[0].append(LOW)
+            decoded[0].append(ONE)
             decoded[0].append(ZERO)
+            decoded[0].append(SEPARE)
             
-            
-            if encoded[i-1] == 0:
-    
-                decoded[1].append(HIGE)
-                decoded[1].append(ONE)
-                
-                decoded[2].append(LOW)
-                decoded[2].append(ZERO)
+            decoded[1].append(ONE)
+            decoded[1].append(ONE)
+            decoded[1].append(SEPARE)
 
-            else :
-
-                decoded[1].append(ONE)
-                
-                decoded[2].append(HIGE)
-                decoded[2].append(LOW)
-                decoded[2].append(ZERO)
+            decoded[2].append(ONE)
+            decoded[2].append(ZERO)
+            decoded[2].append(SEPARE)
                 
                 
-            if decoded[3][i-1] == HIGE:
+            if encoded[i-1] == 1:
                     
                 decoded[3].append(ONE)
-                decoded[3].append(LOW)
+                decoded[3].append(ZERO)
+                decoded[3].append(SEPARE)
                     
-            elif decoded[3][i-1] == LOW:
+            else:
                     
                 decoded[3].append(ZERO)
-                decoded[3].append(HIGE)
+                decoded[3].append(ONE)
+                decoded[3].append(SEPARE)
                 
             
         
@@ -115,6 +132,7 @@ def draw(encoded):
 
 
     i = 0
+
     
     for x in decoded:
         
