@@ -53,6 +53,7 @@ def draw(encoded):
         decoded[3].append(SEPARE)
 
     i = 1
+    paralleli = 4
 
     while i < len(encoded):
 
@@ -70,7 +71,8 @@ def draw(encoded):
             decoded[2].append(ONE)
             decoded[2].append(SEPARE)
                 
-            if decoded[3][i-2] == ONE:
+            if decoded[3][paralleli-2] == ONE:
+
 
                 if encoded[i-1] == 1:
     
@@ -112,9 +114,9 @@ def draw(encoded):
             decoded[2].append(ONE)
             decoded[2].append(ZERO)
             decoded[2].append(SEPARE)
-                
-                
-            if encoded[i-1] == 1:
+               
+
+            if decoded[3][paralleli-2] == ONE:
                     
                 decoded[3].append(ONE)
                 decoded[3].append(ZERO)
@@ -129,6 +131,7 @@ def draw(encoded):
             
         
         i += 1
+        paralleli += 3
 
 
     i = 0
