@@ -28,6 +28,7 @@ def draw(encoded):
 
         decoded[3].append(SEPARE)
         decoded[3].append(ONE)
+        decoded[3].append(ONE)
         decoded[3].append(SEPARE)
 
     else:
